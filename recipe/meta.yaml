@@ -17,12 +17,12 @@ build:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cd ../metatomic_torch
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   string: py{{ CONDA_PY }}_h{{ PKG_HASH }}_git.{{ git_rev[:7] }}_{{ PKG_BUILDNUM }}
   script_env:
-    - METATOMIC_NO_LOCAL_DEPS='1'
-    - METATOMIC_TORCH_PYTHON_USE_EXTERNAL_LIB='ON'
-    - METATOMIC_TORCH_BUILD_WITH_TORCH_VERSION='2.10.*'
+    - METATOMIC_NO_LOCAL_DEPS=1
+    - METATOMIC_TORCH_PYTHON_USE_EXTERNAL_LIB=ON
+    - METATOMIC_TORCH_BUILD_WITH_TORCH_VERSION=2.10.*
   ignore_run_exports:
     # pytorch is only used as a Python package, all the pytorch version pinning
     # is happening in libmetatomic-torch
