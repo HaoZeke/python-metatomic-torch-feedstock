@@ -1,18 +1,20 @@
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge
+- metatensor,conda-forge
 channel_targets:
-- conda-forge main
+- metatensor main
 cxx_compiler:
 - vs2022
 libtorch:
-- '2.6'
+- '2.10'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
 - 3.13.* *_cp313
+pytorch:
+- '2.10'
 target_platform:
 - win-64
